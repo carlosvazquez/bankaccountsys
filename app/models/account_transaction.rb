@@ -1,6 +1,6 @@
 class AccountTransaction < ApplicationRecord
   belongs_to :bank_account
-  TRANSACTION_TYPES = ['withdraw' 'deposit']
+  TRANSACTION_TYPES = ['withdraw', 'deposit']
 
   validates :bank_account, presence: true, uniqueness: true
   validates :amount, presence: true, numericality: true
