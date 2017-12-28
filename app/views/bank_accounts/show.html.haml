@@ -1,0 +1,31 @@
+.container
+  .row
+    .col-xs-12
+      %h1
+        Account number: #{ @bank_account.account_number}
+        %small
+          #{ @bank_account.client}
+      = button_tag :new_transaction, id: 'btn-transaction', class: 'btn btn-primary' do
+        New Transaction
+
+.container
+  .row
+    .col-xs-12
+      %table.table.table-bordered
+        %thead
+          %tr
+            %th Date of transaction
+            %th Transaction type
+            %th Amount
+        %tbody
+          - @bank_account.account_transactions.each do |transaction|
+            %tr
+              %td #{transaction.created_at}
+              %td #{transaction.transaction_type}
+              %td #{number_to_currency(number_to_money(transaction.amont), unit: '$ ')}
+          %tr
+            %th
+            %th Balance
+            %th #{number_to_currency(number_to_money(@bank_account.balance), unit: '$ ')}
+
+= javascript_include_tag 'bank_accounts/show'
