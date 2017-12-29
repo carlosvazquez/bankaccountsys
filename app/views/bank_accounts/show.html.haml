@@ -22,7 +22,7 @@
             %tr
               %td #{transaction.created_at}
               %td #{transaction.transaction_type}
-              %td #{number_to_currency(number_to_money(transaction.amont), unit: '$ ')}
+              %td #{number_to_currency(number_to_money(transaction.amount), unit: '$ ')}
           %tr
             %th
             %th Balance
@@ -41,6 +41,9 @@
         %h4.modal-title
           New Transaction
       .modal-body
+        .row
+          .col-xs-12
+            .notification
         .row
           .col-xs-6
             %label
