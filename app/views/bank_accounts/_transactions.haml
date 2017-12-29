@@ -1,0 +1,16 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Date of transaction
+      %th Transaction type
+      %th Amount
+  %tbody
+    - bank_account.account_transactions.each do |transaction|
+      %tr
+        %td #{transaction.created_at}
+        %td #{transaction.transaction_type}
+        %td #{number_to_currency(number_to_money(transaction.amount), unit: '$ ')}
+    %tr
+      %th
+      %th Balance
+      %th #{number_to_currency(number_to_money(bank_account.balance), unit: '$ ')}
