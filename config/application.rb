@@ -16,5 +16,6 @@ module Bank
     # -- all .rb files in that directory are automatically loaded.
     # Rails.application.config.autoload_paths << "#{Rails.root}/app/operations"
     config.autoload_paths << "#{Rails.root}/app/operations"
+    config.autoload_paths << "#{Rails.root}/app/core"
   end
 end
