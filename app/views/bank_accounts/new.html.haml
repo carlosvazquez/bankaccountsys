@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-xs-12
+    %h1
+      New Bank Account
+    = simple_form_for @bank_account do |f|
+      .form-group
+        = f.input :account_number, input_html: {class: 'form-control'}
+      .form-group
+        = f.association :client, input_html: {class: 'form-control'}, prompt: "Choose a Client"
+      .form-actions
+        = button_tag type: :submit, class: 'btn btn-primary' do
+          Save Bank Account
+        = link_to root_path, class: 'btn btn-default' do
+          Cancel
