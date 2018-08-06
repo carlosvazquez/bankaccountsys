@@ -17,5 +17,6 @@ module Bank
     # Rails.application.config.autoload_paths << "#{Rails.root}/app/operations"
     config.autoload_paths << "#{Rails.root}/app/operations"
     config.autoload_paths << "#{Rails.root}/app/core"
+    Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end

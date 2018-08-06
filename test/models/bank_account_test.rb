@@ -15,7 +15,6 @@ class BankAccountTest < ActiveSupport::TestCase
     assert @bankAccount.invalid?
   end
   test 'bank account with uniqueness account number' do
-    skip
     @bankAccount.account_number = 'fsda7faskf'
     assert @bankAccount.invalid?
   end
